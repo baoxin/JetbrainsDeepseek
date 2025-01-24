@@ -1,0 +1,30 @@
+<idea-plugin>
+    <id>com.example.myplugin</id>
+    <name>My Plugin</name>
+    <vendor>Your Name</vendor>
+    <description><![CDATA[
+    这是一个示例插件的描述
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="DeepSeek" 
+                   secondary="true" 
+                   icon="AllIcons.General.Modified" 
+                   anchor="right"
+                   factoryClass="com.example.myplugin.window.DeepSeekToolWindow"/>
+        <completion.contributor
+            implementationClass="com.example.myplugin.completion.DeepSeekCompletionContributor"/>
+    </extensions>
+
+    <actions>
+        <action id="com.example.myplugin.HelloAction" 
+                class="com.example.myplugin.HelloAction" 
+                text="显示问候" 
+                description="显示一个问候消息">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
+    </actions>
+</idea-plugin> 
